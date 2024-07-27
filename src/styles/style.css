@@ -2,10 +2,17 @@
   --blue-background: #0891b2;
   --grey-font: rgb(95, 95, 95);
   --shadow-color: rgba(0, 0, 0, 0.255);
+  --darkred: #9e1c1c;
+  --purple: #7c75ca;
+  --green: #5e8f4d;
+  --pink: #c363b4;
+  --orange: #d88f39;
+  --light-blue: #4ba2d2;
 }
 
-body{
-  margin: 0;
+
+body,h1,h2,h3,p,a{
+  margin: 0
 }
 
 .background.wrapper{
@@ -16,11 +23,11 @@ body{
 
 .background.blue{
   position: absolute;
-  height: 500px;
+  height: 530px;
   width: 100vw;
   background-color: var(--blue-background);
   
-  clip-path: polygon(0 0, 100% 0%, 100% 39%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0%, 100% 60%, 0% 100%);
 }
 header{
   position: relative;
@@ -39,13 +46,15 @@ div.header.image{
   flex-shrink: 0;
   display: flex;
 
-  background-image: url("../img/pexels-shvetsa-3727474.jpg");
+  background-image: url("../img/pexels-shvetsa-3727474\ _600px.jpg");
   background-size: cover;
   background-position: center;
   align-items: flex-end;
   justify-content: center;
 
   box-shadow: 3px 3px 10px var(--shadow-color) ;
+
+  z-index: 2;
 }
 img.headshot{
   height: 400px;
@@ -54,7 +63,6 @@ img.headshot{
 }
 
 h1.name{
-  margin:0;
   color: white;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.377);
   font-size: 3.4rem;
@@ -67,13 +75,11 @@ h1.name{
 .about.wrapper{
   padding: 2em 1.5em;
   background-color: white;
-  z-index: -1;
 
   box-shadow: 3px 3px 10px var(--shadow-color) ;
 }
 
 h2.about{
-  margin: 0;
   font-family: "Playfair Display", "Roboto", sans-serif;
   font-weight: 200;
   font-size: 2.3rem;
@@ -93,24 +99,165 @@ p.about.description{
 }
 
 button.header{
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
 }
 
 button{
   background: none;
   border: none;
-    
+  padding: 0;
+  
+  transition: transform .25s 
 }
 
-button.github{
+a{
+  text-decoration: none;
+}
+
+button a{
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  transition: transform 450ms;
+}
+
+button.github a{
   background-image: url("../img/github-original.svg");
 }
 
-button.linkedin{
+button.linkedin a{
   background-image: url("../img/linkedin-plain.svg");
 }
 
-button.twitter{
+button.twitter a{
   background-image: url("../img/twitter-original.svg");
 }
+
+/* button shadow */
+button.header::after{
+  content: "";
+  display: block;
+  width: 20px;
+  height: 3px;
+  margin:auto;
+
+  background: radial-gradient(#3d3d3d5e, #adadad00);
+  opacity: 0%;
+  transition: opacity 450ms;
+
+}
+
+button.header:hover a,
+button.header:focus a{
+  transition: transform 125ms;
+  transform: translateY(-5px);
+}
+
+button.header:hover::after{
+  opacity: 70%;
+}
+
+main{
+  padding: 3em;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2.main{
+  font-family: "Playfair Display", "Roboto", sans-serif;
+  font-weight: 150;
+  font-size: 2.3rem;
+}
+
+.projects.section.wrapper{
+  display: flex;
+  gap: 3em 2em;
+  margin-top: 1em;
+  flex-wrap: wrap;
+}
+
+.project.card.wrapper{
+  height: 350px;
+  width: 300px;
+
+  box-shadow: 3px 3px 8px var(--shadow-color);
+}
+
+.project.image{
+  height: 200px;
+  background-color:var(--darkred);
+  font-family: "Playfair Display", "Roboto", sans-serif;
+  font-size: 2.1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+p.placeholder{
+  max-width: 200px;
+  color: white;
+  padding-bottom: .5em;
+}
+
+.project.image.purple{
+  background-color:var(--purple);
+}
+
+.project.image.green{
+  background-color:var(--green);
+}
+
+.project.image.pink{
+  background-color:var(--pink);
+}
+
+.project.image.orange{
+  background-color:var(--orange);
+}
+
+.project.image.blue{
+  background-color:var(--light-blue);
+}
+
+.project.info{
+  padding: .5em .8em
+}
+
+.project.title-buttons.wrapper{
+  display: flex;
+  gap: 1em;
+}
+
+.project.title{
+  font-family: "Playfair Display", "Roboto", sans-serif;
+  font-size: 1.2em;
+
+  flex-grow: 1;
+}
+
+button.external a{
+  background-image: url("../img/open-in-new.svg");
+}
+
+button.project{
+  height: 20px;
+  width: 20px;
+}
+
+button.project:hover a,
+button.project:focus a{
+  transition: transform 125ms;
+  transform: translateY(-2px);
+}
+
+p.project.description{
+  font-family: "Roboto", sans-serif;
+  color: var(--grey-font);
+  font-size: .8rem;
+  margin-top:1em;
+}
+

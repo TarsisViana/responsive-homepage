@@ -337,3 +337,22 @@ button.contact:focus a{
   transition: transform 125ms;
   transform: translateY(-5px);
 }
+
+/* button shadow */
+button.contact::after{
+  content: "";
+  display: block;
+  width: 20px;
+  height: 3px;
+  margin:auto;
+
+  background: radial-gradient(#3d3d3d5e, #adadad00);
+  opacity: 0%;
+  transition: opacity 450ms;
+
+}
+
+button.contact:hover::after,
+button.contact:focus::after{
+  opacity: 70%;
+}

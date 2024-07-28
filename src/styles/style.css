@@ -39,27 +39,16 @@ header{
   display: flex;
   align-items: center;
 }
-div.header.image{
+
+img.header.profile{
   height: 450px;
   width: 405px;
-  text-align: center;
-  flex-shrink: 0;
-  display: flex;
 
-  background-image: url("../img/pexels-shvetsa-3727474\ _600px.jpg");
-  background-size: cover;
-  background-position: center;
-  align-items: flex-end;
-  justify-content: center;
+  object-fit: cover;
+  flex: 0 0 auto;
 
   box-shadow: 3px 3px 10px var(--shadow-color) ;
-
   z-index: 2;
-}
-img.headshot{
-  height: 400px;
-  width: 100%;
-  object-fit: cover;
 }
 
 h1.name{
@@ -69,6 +58,12 @@ h1.name{
 
   font-family: "Playfair Display", Roboto, sans-serif;
   font-weight: 200;
+
+  position: absolute;
+  z-index: 3;
+
+  bottom: 48px;
+  left: 60px;
  
 }
 

@@ -86,6 +86,8 @@ h2.about{
 }
 
 p.about.description{
+  margin-top: 1.5em;
+
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
   color: var(--grey-font);
@@ -168,7 +170,7 @@ main{
 h2.main{
   font-family: "Playfair Display", "Roboto", sans-serif;
   font-weight: 150;
-  font-size: 2.3rem;
+  font-size: 2rem;
 }
 
 .projects.section.wrapper{
@@ -176,11 +178,13 @@ h2.main{
   gap: 3em 2em;
   margin-top: 1em;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .project.card.wrapper{
   height: 350px;
-  width: 300px;
+  max-width: 300px;
+  flex: 1 1 274px;
 
   box-shadow: 3px 3px 8px var(--shadow-color);
 }
@@ -261,3 +265,75 @@ p.project.description{
   margin-top:1em;
 }
 
+footer{
+  display: flex;
+  background-color: var(--blue-background);
+  color: white;
+  padding: 3em 2em;
+  justify-content: center;
+}
+
+.contact.wrapper{
+  width: 350px;
+}
+
+h3.contact{
+  font-family: "Playfair Display", "Roboto", sans-serif;
+  font-weight: 200;
+  font-size: 2rem;
+}
+
+p.contact{
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+p.contact.call-to-action{
+  margin-top: 1.5em;
+  max-width: 280px;
+}
+
+p.contact.address{
+  margin: 2em 0;
+}
+
+p.contact.email,
+p.contact.phone{
+  display: flex;
+  align-items: center;
+  gap: .5em;
+}
+
+p.contact.phone{
+  margin-bottom: .5em;
+}
+
+img.contact{
+  width: 25px;
+  height: 25px;
+  filter:invert(100%);
+}
+
+img.footer{
+  width: 530px;
+  height: 420px;
+  object-fit: cover;
+}
+
+footer .buttons.wrapper{
+  display: flex;
+  gap: 1.5em;
+
+  margin-top: 2em;
+}
+
+button.contact{
+  width: 32px;
+  height: 32px;
+}
+
+button.contact:hover a,
+button.contact:focus a{
+  transition: transform 125ms;
+  transform: translateY(-5px);
+}
